@@ -4,3 +4,4 @@ Ce dépôt contient des exemples de code python pour différentes composantes é
 - Joystick
 - Passive buzzer
 - IR Module
+- partage I2C entre ADS1115 et TMD27713
