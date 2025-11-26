@@ -3,3 +3,4 @@ Ce dépôt contient des exemples de code python pour différentes composantes é
 # TODO
 - Joystick
 - Passive buzzer
+- IR Module
