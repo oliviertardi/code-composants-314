@@ -1,7 +1,7 @@
 import pigpio
 
-CLK = 21   # Pin for CLK signal
-DAT = 20    # Pin for DAT signal
+CLK = 21   
+DAT = 20    
 
 pi = pigpio.pi()
 pi.set_mode(CLK, pigpio.INPUT)
@@ -13,8 +13,10 @@ dernier = pi.read(CLK)
 
 # Le fonctionnement du rotary encoder:
 # La rotation de la tige se fait par incrémentation (on le sent lorsqu'on la tourne)
-# À chaque incrémentation de la rotation, deux contacts électriques (sur CLK et DAT) se produisent. 
-# Si CLK et DAT sont différents
+# À chaque incrémentation de la rotation, la valeur de CLK change. Lors de ce changement,
+# c'est la valeur de DAT qui nous indique le sens de rotation. 
+# Si CLK et DAT sont différents, la rotation est horaire; si les valeurs sont identiques,
+# Explication visuelle: https://www.youtube.com/watch?v=v4BbSzJ-hz4
 try:
     while True:
         etat = pi.read(CLK)

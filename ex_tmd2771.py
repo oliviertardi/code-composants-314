@@ -52,7 +52,7 @@ while True:
     # Conversion des données
     c0_data = data[1] * 256 + data[0]
     c1_data = data[3] * 256 + data[2]
-    proximity = data[5] * 256 + data[4]
+    prox = data[5] * 256 + data[4]
     lumi = 0.0
     CPL = (101.0) / 24.0
     lumi1 = ((1.00 *  c0_data) - (2 * c1_data)) / CPL
@@ -64,4 +64,4 @@ while True:
             lumi = lumi2
 
     print("Luminosité : ",lumi)
-    print("Proximity of the Device : ",proximity)
+    print("Proximité : ",prox)
